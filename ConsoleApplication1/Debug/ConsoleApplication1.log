@@ -1,0 +1,5 @@
+﻿  ConsoleApplication1.cpp
+C:\Users\270161235\OneDrive - UP Education\Desktop\C++103\Gittest\GitCollab\ConsoleApplication1\ConsoleApplication1.cpp(90,9): warning C4101: 'Comfirmation': unreferenced local variable
+C:\Users\270161235\OneDrive - UP Education\Desktop\C++103\Gittest\GitCollab\ConsoleApplication1\ConsoleApplication1.cpp(88,9): warning C4101: 'Choice': unreferenced local variable
+C:\Users\270161235\OneDrive - UP Education\Desktop\C++103\Gittest\GitCollab\ConsoleApplication1\ConsoleApplication1.cpp(89,10): warning C4101: 'Cinfail': unreferenced local variable
+  ConsoleApplication1.vcxproj -> C:\Users\270161235\OneDrive - UP Education\Desktop\C++103\Gittest\GitCollab\ConsoleApplication1\Debug\ConsoleApplication1.exe

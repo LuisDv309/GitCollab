@@ -1,5 +1,7 @@
+//Admin Login page
+//Work to be done: link to admin screen if username/password is true
+
 #include <iostream>
-#include <Windows.h>
 
 using namespace std;
 

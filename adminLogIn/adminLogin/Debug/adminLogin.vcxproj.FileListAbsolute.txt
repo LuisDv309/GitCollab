@@ -1,1 +1,3 @@
 C:\Users\Poltato\Desktop\CS103Project\adminLogIn\adminLogin\Debug\adminLogin.exe
+C:\Users\270161698\OneDrive - UP Education\Desktop\CS103GroupProject\GitCollab\adminLogIn\adminLogin\Debug\adminLogin.exe
+C:\Users\270161698\OneDrive - UP Education\Desktop\CS103GroupProject\GitCollab\adminLogIn\adminLogin\Debug\adminLogin.pdb

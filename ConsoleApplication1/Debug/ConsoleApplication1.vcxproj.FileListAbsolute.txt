@@ -1,2 +1,4 @@
 C:\Users\270161235\OneDrive - UP Education\Desktop\C++103\Gittest\GitCollab\ConsoleApplication1\Debug\ConsoleApplication1.exe
 C:\Users\270161235\OneDrive - UP Education\Desktop\C++103\Gittest\GitCollab\ConsoleApplication1\Debug\ConsoleApplication1.pdb
+C:\Users\270161235\OneDrive - UP Education\Desktop\C++103\GitSorted\GitCollab\ConsoleApplication1\Debug\ConsoleApplication1.exe
+C:\Users\270161235\OneDrive - UP Education\Desktop\C++103\GitSorted\GitCollab\ConsoleApplication1\Debug\ConsoleApplication1.pdb

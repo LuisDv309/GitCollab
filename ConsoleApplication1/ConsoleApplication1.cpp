@@ -2,8 +2,7 @@
 //  main.cpp
 //  Testproject
 //
-//  Created by Luis Perez on 17/10/21.
-//
+//  Created by Luis Perez on 17/10/21
 
 #include <iostream>
 #include <ctime>

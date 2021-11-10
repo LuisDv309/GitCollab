@@ -1,0 +1,4 @@
+C:\Users\270161698\source\repos\OrderScreen\Debug\OrderScreen.exe
+C:\Users\270161698\source\repos\OrderScreen\Debug\OrderScreen.pdb
+C:\Users\270161698\GitCollab\OrderScreen\Debug\OrderScreen.exe
+C:\Users\270161698\GitCollab\OrderScreen\Debug\OrderScreen.pdb

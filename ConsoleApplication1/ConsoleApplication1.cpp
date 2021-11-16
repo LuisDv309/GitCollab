@@ -11,6 +11,7 @@
 #include <cstdlib>
 #include <sstream>
 #include <vector>
+#include <iomanip>
 using namespace std;
 //structure//
 
@@ -32,59 +33,128 @@ void Exit() {
     exit(0);
 }
 void Line(int n);
-vector<Parents>ReadFromFile();
+//Functions to read from Files//
+vector<Parents>ReadFromParentsFile();
+vector<Parents>ReadFromLoginParentsFile();
 //Function to Show Menu//
 void IntroMenu();
 vector<Parents>LoginParents(vector<Parents>& LoginInfo);
+
+void FoodMenu();
 int main() {
 
     IntroMenu();
 
-    // ReadFromFile();
+    
 }
 
 //Functions //
 vector<Parents>InputParentsRegis(vector<Parents>& inparents) {
 
     Parents p;
-    char answer = 'n';
+    char answer = 'y';
     fstream  MyFile("ParentsFile.csv", ios::app);// Adding to existing file
-    while (tolower(answer) == 'n') {
+    while (tolower(answer) == 'y') {
 
         cin.ignore();
-        Line(40);
-        cout << " Register For The School Lunch Order System" << endl;
-        Line(40);
-        cout << "Please Enter your Full Name :" << endl;
+        Line(45);
+        cout << "\tRegister For The School Lunch Order System " << endl;
+        Line(45);
+        cout << "\tPlease Enter your Full Name :" << endl;
         getline(cin, p.FullName);
 
-        cout << "Date Of Birth :" << endl;
+        cout << "\tDate Of Birth :" << endl;
         getline(cin, p.DOB);
 
-        cout << "Phone Number :" << endl;
+        cout << "\tPhone Number :" << endl;
         cin >> p.ContactNumber;
         cin.ignore();
-        cout << "Please Enter Your Child Full Name :" << endl;
+        cout << "\tPlease Enter Your Child Full Name :" << endl;
         getline(cin, p.ChildFullName);
-        cout << "Your Child ClassRoom Number :" << endl;
+        cout << "\tYour Child ClassRoom Number :" << endl;
         cin >> p.ChildRoomNum;
-        cout << "Enter Your Credit Card Number :" << endl;
+        cout << "\tEnter Your Credit Card Number :" << endl;
         cin >> p.VisaCardNum;
         cin.ignore();
-        cout << "Expire Date: " << endl;
+        cout << "\tExpire Date: " << endl;
         getline(cin, p.VisaCardExpireDate);
-        MyFile << p.FullName << "," << p.DOB << "," << p.ContactNumber << p.ChildFullName << "," << p.ChildRoomNum << "," << p.VisaCardNum << "," << p.VisaCardExpireDate << endl;
-        cout << "Do You Wish to Submmit Your Registration Y / N" << endl;
+        cout << "\tEnter the Username :" << endl;
+        getline(cin, p.UserName);
+        cout << "\tEnter Your Password :" << endl;
+        getline(cin, p.Password);
+        
+        if (p.Password.size() >= 8) {
+            int PasswordIndex, DigitFlag = 0, LowerFlag = 0, UpperFlag = 0, SpecialCharacterFlag = 0;
+            for (PasswordIndex = 0; PasswordIndex < p.Password.size(); PasswordIndex++) {
+                if (isdigit(p.Password[PasswordIndex])) {
+                    DigitFlag = 1;
+                }
+
+
+            }
+            if (DigitFlag == 0)
+                cout << "\tNumber is Missing" << endl;
+
+            //Checking if the Password contains a lower case//
+            for (PasswordIndex = 0; PasswordIndex < p.Password.size(); PasswordIndex++) {
+                if (islower(p.Password[PasswordIndex])) {
+                    LowerFlag = 1;
+                }
+            }
+            if (LowerFlag == 0)
+                cout << "\tLower Case is Missing" << endl;
+
+
+            for (PasswordIndex = 0; PasswordIndex < p.Password.size(); PasswordIndex++) {
+                if (isupper(p.Password[PasswordIndex])) {
+                    UpperFlag = 1;
+                }
+            }
+            if (UpperFlag == 0)
+                cout << "\tUpper Case is Missing" << endl;
+            //Checking if the password has a special Character//
+
+            for (PasswordIndex = 0; PasswordIndex < p.Password.size(); PasswordIndex++) {
+                if (!(isupper(p.Password[PasswordIndex])) && !(islower(p.Password[PasswordIndex])) && !(isdigit(p.Password[PasswordIndex]))) {
+                    SpecialCharacterFlag = 1;
+                }
+            }
+            if (SpecialCharacterFlag == 0)
+                cout << "\tSpecial Character is Missing" << endl;
+
+            if ((DigitFlag == 1) && (LowerFlag == 1) && (UpperFlag == 1) && (SpecialCharacterFlag == 1)) {
+                cout << "\tCongratulation You have been Registered" << endl;
+                
+                
+            }
+            else {
+                cout << "The password must contain alteast a number, a special character, a lower case and an upper case. It is an invalid password " << endl;
+
+            }
+        }
+        else {
+            cout << "Password must contain 8 or more character" << endl;
+        
+        }
+        
+        MyFile << p.FullName << "," << p.DOB << "," << p.ContactNumber << p.ChildFullName << "," << p.ChildRoomNum << "," << p.VisaCardNum << "," << p.VisaCardExpireDate << p.UserName << "," << p.Password << "," << endl;
+        
+        MyFile.close();
+            
+        cout << "\tWould you like to Login y/n" << endl;
         cin >> answer;
-
-
+        if (tolower(answer) == 'y'){
+            
+            vector<Parents>LoginInfo;
+            LoginParents(LoginInfo);
+        }
+       
+        
     }
 
+    vector<Parents> InfoFromParentsFile = ReadFromParentsFile();
 
-
-    MyFile.close();
-
-    return (inparents);
+    return (InfoFromParentsFile);
 }
 
 
@@ -98,9 +168,9 @@ void Line(int n) {
     cout << endl;
 }
 
-vector<Parents>ReadFromFile() {
+vector<Parents>ReadFromParentsFile() {
 
-    cout << "FromReadFrom File Function" << endl;
+   // cout << "FromReadFrom File Function" << endl;
     Line(66);
     fstream MyFile("ParentsFile.csv", ios::in);
     vector <Parents>TempParents;
@@ -120,6 +190,14 @@ vector<Parents>ReadFromFile() {
 
         stringstream ss(RegisteredParent);
         ss >> p.ContactNumber;
+        
+        getline(linestream, RegisteredParent, ',');
+        p.UserName = RegisteredParent;
+        
+        getline(linestream, RegisteredParent, ',');
+        p.UserName = RegisteredParent;
+        
+        
         TempParents.push_back(p);
     }
     MyFile.close();
@@ -145,12 +223,13 @@ void IntroMenu() {
     cin >> Option;
     //Calling the functions on the bases of the above options//
     if (Option == 1) {
-        vector<Parents>inparents;
-        InputParentsRegis(inparents);
+        vector<Parents>InfoParentsFromFile;
+        InputParentsRegis(InfoParentsFromFile);
     }
     else if (Option == 2) {
         vector<Parents>LoginInfo;
         LoginParents(LoginInfo);
+        
 
     }
     else if (Option == 3) {
@@ -164,13 +243,14 @@ void IntroMenu() {
 
     }
     else {
-        cout << "Invalid Option Please Try Again" << endl << endl;
+        cout << "\tInvalid Option Please Try Again" << endl << endl;
         IntroMenu();
     }
 }
 vector<Parents>LoginParents(vector<Parents>& LoginInfo) {
 
     Parents p;
+    
     char answer = 'y';
     fstream MyFlie1("ParentsLogin.csv", ios::app); //adding to existing file//
     while (tolower(answer) == 'y') {
@@ -178,66 +258,42 @@ vector<Parents>LoginParents(vector<Parents>& LoginInfo) {
         Line(40);
         cout << "     Parent Login  " << endl;
         Line(40);
-        cout << "Enter the Username" << endl;
+        cout << "Enter the Username :" << endl;
         getline(cin, p.UserName);
-        cout << "Enter Your Password" << endl;
-        getline(cin, p.Password);      /*Rule: minimum 8 characters atleast one upper case,
-                                       one lower case, one special symbol and one number*/
-        if (p.Password.size() >= 8) {
-            int PasswordIndex, DigitFlag = 0, LowerFlag = 0, UpperFlag = 0, SpecialCharacterFlag = 0;
-            for (PasswordIndex = 0; PasswordIndex < p.Password.size(); PasswordIndex++) {
-                if (isdigit(p.Password[PasswordIndex])) {
-                    DigitFlag = 1;
-                }
-
-
-            }
-            if (DigitFlag == 0)
-                cout << "Number is Missing" << endl;
-
-            //Checking if the Password contains a lower case//
-            for (PasswordIndex = 0; PasswordIndex < p.Password.size(); PasswordIndex++) {
-                if (islower(p.Password[PasswordIndex])) {
-                    LowerFlag = 1;
-                }
-            }
-            if (LowerFlag == 0)
-                cout << "Lower Case is Missing" << endl;
-
-
-            for (PasswordIndex = 0; PasswordIndex < p.Password.size(); PasswordIndex++) {
-                if (isupper(p.Password[PasswordIndex])) {
-                    UpperFlag = 1;
-                }
-            }
-            if (UpperFlag == 0)
-                cout << "Upper Case is Missing" << endl;
-            //Checking if the password has a special Character//
-
-            for (PasswordIndex = 0; PasswordIndex < p.Password.size(); PasswordIndex++) {
-                if (!(isupper(p.Password[PasswordIndex])) && !(islower(p.Password[PasswordIndex])) && !(isdigit(p.Password[PasswordIndex]))) {
-                    SpecialCharacterFlag = 1;
-                }
-            }
-            if (SpecialCharacterFlag == 0)
-                cout << "Special Character is Missing" << endl;
-
-            if ((DigitFlag == 1) && (LowerFlag == 1) && (UpperFlag == 1) && (SpecialCharacterFlag == 1)) {
-                cout << "Valid Password" << endl;
-                cout << "Would you like to continue y/n" << endl;
-                cin >> answer;
-            }
-            else {
-                cout << "The password must contain alteast a number, a special character, a lower case and an upper case. It is an invalid password " << endl;
-
-            }
-        }
-        else {
-            cout << "Password must contain 8 or more character" << endl;
-        }
-        MyFlie1 << p.UserName << "," << p.Password << "," << endl;
-
-        MyFlie1.close();
+        cout << "Enter Your Password :" << endl;
+        getline(cin, p.Password);
+        if (p.Password == )
     }
-    return (LoginInfo);
+        vector<Parents> InfoLoginParents = ReadFromLoginParentsFile();
+    
+        return (InfoLoginParents);
+        
+    }
+        
+
+vector<Parents>ReadFromLoginParentsFile(){
+
+     cout << "ReadFromLogin File Function" << endl;
+    Line(66);
+    fstream MyFile2("ParentsLogin.csv", ios::in);
+    vector <Parents>TempLoginParents;
+    Parents p;
+    string line;
+    while (getline(MyFile2, line)) {
+        cout << line << endl;
+        istringstream linestream(line);
+        string LoggedParent;
+        getline(linestream, LoggedParent, ',');
+        p.UserName = LoggedParent;
+
+        getline(linestream, LoggedParent, ',');
+        p.Password = LoggedParent;
+
+        TempLoginParents.push_back(p);
+    }
+    MyFile2.close();
+
+    return(TempLoginParents);
+
 }
+

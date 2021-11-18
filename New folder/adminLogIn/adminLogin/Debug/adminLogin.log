@@ -1,0 +1,4 @@
+﻿  adminLogin.cpp
+C:\Users\Poltato\Desktop\CS103Project\adminLogIn\adminLogin\adminLogin.cpp(84,11): warning C4305: 'return': truncation from 'int' to 'bool'
+C:\Users\Poltato\Desktop\CS103Project\adminLogIn\adminLogin\adminLogin.cpp(86): warning C4715: 'loginTrue': not all control paths return a value
+  adminLogin.vcxproj -> C:\Users\Poltato\Desktop\CS103Project\adminLogIn\adminLogin\Debug\adminLogin.exe

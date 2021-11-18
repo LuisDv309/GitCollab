@@ -1,5 +1,0 @@
-﻿  OrderScreen.cpp
-C:\Users\270161698\OneDrive - UP Education\Documents\GitCollab\OrderScreen\OrderScreen.cpp(48,21): error C3861: 'readFromFile': identifier not found
-C:\Users\270161698\OneDrive - UP Education\Documents\GitCollab\OrderScreen\OrderScreen.cpp(163,22): error C2374: 'ss': redefinition; multiple initialization
-C:\Users\270161698\OneDrive - UP Education\Documents\GitCollab\OrderScreen\OrderScreen.cpp(153): message : see declaration of 'ss'
-C:\Users\270161698\OneDrive - UP Education\Documents\GitCollab\OrderScreen\OrderScreen.cpp(164,12): error C2088: '>>': illegal for class

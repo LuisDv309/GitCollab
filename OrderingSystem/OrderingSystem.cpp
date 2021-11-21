@@ -3,7 +3,7 @@
 #include "adminLanding.h"
 #include "adminLogin.h"
 #include <stdio.h>
-#include "clearScreen.h"
+#include "screenChange.h"
 
 int main()
 {

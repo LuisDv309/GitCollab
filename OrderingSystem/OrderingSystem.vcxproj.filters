@@ -32,7 +32,7 @@
     <ClInclude Include="orderScreen.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="clearScreen.h">
+    <ClInclude Include="screenChange.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

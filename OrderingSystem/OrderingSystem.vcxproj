@@ -144,7 +144,7 @@
   <ItemGroup>
     <ClInclude Include="adminLanding.h" />
     <ClInclude Include="adminLogin.h" />
-    <ClInclude Include="clearScreen.h" />
+    <ClInclude Include="screenChange.h" />
     <ClInclude Include="menuUpdater.h" />
     <ClInclude Include="orderScreen.h" />
   </ItemGroup>

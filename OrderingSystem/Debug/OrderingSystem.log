@@ -1,6 +1,5 @@
 ﻿  OrderingSystem.cpp
-C:\Users\Israel\Desktop\Gitcollab\GitCollab\OrderingSystem\orderScreen.h(48,21): error C3861: 'readFromFile': identifier not found
-C:\Users\Israel\Desktop\Gitcollab\GitCollab\OrderingSystem\orderScreen.h(103,19): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Israel\Desktop\Gitcollab\GitCollab\OrderingSystem\orderScreen.h(121,19): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Israel\Desktop\Gitcollab\GitCollab\OrderingSystem\orderScreen.h(161,22): error C2374: 'ss': redefinition; multiple initialization
-C:\Users\Israel\Desktop\Gitcollab\GitCollab\OrderingSystem\orderScreen.h(151): message : see declaration of 'ss'
+C:\Users\Israel\Desktop\Gitcollab\GitCollab\OrderingSystem\orderScreen.h(104,19): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Israel\Desktop\Gitcollab\GitCollab\OrderingSystem\orderScreen.h(122,19): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Israel\Desktop\Gitcollab\GitCollab\OrderingSystem\orderScreen.h(162,22): error C2374: 'ss': redefinition; multiple initialization
+C:\Users\Israel\Desktop\Gitcollab\GitCollab\OrderingSystem\orderScreen.h(152): message : see declaration of 'ss'

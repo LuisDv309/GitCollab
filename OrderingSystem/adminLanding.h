@@ -1,11 +1,10 @@
 #include <iostream>
 #include "menuUpdater.h"
 #include "orderScreen.h"
-#include "clearScreen.h"
+#include "screenChange.h"
 using namespace std;
 
 	//Prototype functions
-	void makeLine();
 	void display();
 	void options();
 	void adminLanding();
@@ -23,15 +22,10 @@ using namespace std;
 	{
 		cout << "\nAdmin menu\n";
 		makeLine();
-		cout << "\nPlease select from the following options: \n1.Update Menu \n2.Daily Orders \n3.Weekly complaint report \n4.Weekly Pending Payments \n5.Weekly sales report\n";
+		cout << "\nPlease select from the following options:"
+			"\n1.Update Menu"
+			"\n2.Weekly sales report\n";
 		makeLine();
-	}
-
-	void makeLine() {
-		for (int i = 0; i < 45; i++)
-		{
-			cout << "-";
-		}
 	}
 
 	void options() {
@@ -48,20 +42,8 @@ using namespace std;
 		case '2':
 			//OrderScreen();
 			break;
-
-		case '3':
-
-			break;
-
-		case '4':
-
-			break;
-
-		case '5':
-
-			break;
 		default:
-			cout << "\nPlease enter 1-5 for the corresponding option";
+			cout << "\nPlease enter 1-2 for the corresponding option";
 			break;
 		}
 		makeLine();

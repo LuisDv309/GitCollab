@@ -7,7 +7,7 @@ using namespace std;
 
 //Prototype Functions
 void title();
-void lineHoriz();
+void makeLine();
 bool logInDisplay();
 bool loginTrue();
 
@@ -19,7 +19,7 @@ bool login();
 bool login()
 {
 	title();
-	lineHoriz();
+	makeLine();
 	return (logInDisplay());
 
 }
@@ -34,7 +34,7 @@ void title()
 bool logInDisplay()
 {
 	int counter = 2;
-	lineHoriz();
+	makeLine();
 
 	while (counter >= 0)
 	{
@@ -63,41 +63,6 @@ bool logInDisplay()
 	return false;
 
 }
-//
-////if login is successful, will allow user to access main admin landing page (in progress)
-//bool loginTrue()
-//{
-//	bool logInStatus = logInDisplay();
-//	if (logInStatus)
-//	{
-//		char response;
-//		lineHoriz();
-//		cout << "\nPick from the following options: \n1.Update menu \n2.Daily Order Report \n3.Weekly sales report \n4.Weekly pending payment report \n5.Weekly complaints \n";
-//		cin >> response;
-//		switch (response)
-//		{
-//		case '1':
-//
-//			break;
-//
-//		default:
-//			break;
-//		}
-//
-//	}
-//	else
-//	{
-//		return 3;
-//	}
-//}
 
-//creates horizontal lines for borders
-void lineHoriz()
-{
-	for (int i = 0; i < 45; i++)
-	{
-		cout << "-";
-	}
-}
 
 

@@ -38,6 +38,7 @@ struct Order //parent order
 //***********************
 
 int OrderNum();
+vector <Order> readFromFile();
 
 
 void OrderScreen()

@@ -1,3 +1,7 @@
+//  Admin Landing page
+//
+//  Created by Israel Black
+
 #include <iostream>
 #include "menuUpdater.h"
 #include "orderScreen.h"
@@ -12,6 +16,7 @@ using namespace std;
 	//global variables
 	char response;
 
+	// function to be used in other files
 	void adminLanding()
 	{
 		
@@ -19,6 +24,7 @@ using namespace std;
 		options();
 	}
 
+	// displays menu items and instructions
 	void display()
 	{
 		cout << "\nAdmin menu\n";
@@ -30,6 +36,7 @@ using namespace std;
 		makeLine();
 	}
 
+	// displays and manages the user selection
 	void options() {
 		int itemNo;
 		cout << "\nWhich option would you like? ";
@@ -56,7 +63,7 @@ using namespace std;
 			createMenu();
 			adminLanding();
 		default:
-			cout << "\nPlease enter 1-2 for the corresponding option";
+			cout << "\nPlease enter 1-3 for the corresponding option";
 			break;
 		}
 		makeLine();

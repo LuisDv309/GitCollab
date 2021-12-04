@@ -1,3 +1,7 @@
+//  Menu File Manager
+//
+//  Created by Israel Black
+
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -30,7 +34,7 @@ void createMenu();
 void readMenu(int itemNumber);
 void updateMenu(int itemNumber);
 
-
+// Initialise and reset menu
 void createMenu()
 {
     string itemArray[][6] = { {"1.","2.","3.","4.","5.","6."},
@@ -49,6 +53,7 @@ void createMenu()
     }
 }
 
+// Reads off csv file to display specified item
 void readMenu(int itemNumber)
 {
     fstream fin;
@@ -97,6 +102,7 @@ void readMenu(int itemNumber)
     }
 }
 
+// Update an entry in the manu csv file
 void updateMenu(int itemNumber)
 {
     int opt, i, item2;

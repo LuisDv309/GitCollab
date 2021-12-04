@@ -1,5 +1,6 @@
 //Admin Login page
-//Work to be done: link to admin screen if username/password is true
+//
+//  Created by Israel Black
 
 #include <iostream>
 

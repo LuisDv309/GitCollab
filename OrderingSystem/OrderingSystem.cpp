@@ -7,8 +7,8 @@
 
 int main()
 {
-    bool loggedIn = login();
-    if (loggedIn) {
+    //bool loggedIn = login();
+    if (true) {
         clearScreen();
         adminLanding();
    }

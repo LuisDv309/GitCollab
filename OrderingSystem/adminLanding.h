@@ -14,6 +14,7 @@ using namespace std;
 
 	void adminLanding()
 	{
+		
 		display();
 		options();
 	}
@@ -23,12 +24,14 @@ using namespace std;
 		cout << "\nAdmin menu\n";
 		makeLine();
 		cout << "\nPlease select from the following options:"
-			"\n1.Update Menu"
-			"\n2.Weekly sales report\n";
+			"\n1. Display Menu"
+			"\n2. Update Menu"
+			"\n3. Reset menu\n";
 		makeLine();
 	}
 
 	void options() {
+		int itemNo;
 		cout << "\nWhich option would you like? ";
 		cin >> response;
 
@@ -36,12 +39,22 @@ using namespace std;
 		{
 		case '1':
 			clearScreen();
-			updater();
-			break;
+			cout << "Enter item number to display: ";
+			cin >> itemNo;
+			readMenu(itemNo);
+			adminLanding();
+			
 
 		case '2':
-			//OrderScreen();
-			break;
+			clearScreen();
+			cout << "Enter item number to update: ";
+			cin >> itemNo;
+			updateMenu(itemNo);
+			adminLanding();
+
+		case '3':
+			createMenu();
+			adminLanding();
 		default:
 			cout << "\nPlease enter 1-2 for the corresponding option";
 			break;
